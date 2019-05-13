@@ -7,6 +7,11 @@ ApplicationWindow {
     height: 480
     title: qsTr("Content Hub test")
 
+    Label {
+        anchors.margins: 24
+        text: qsTr("Super cross platform app")
+    }
+
 
     Loader {
           id: utFilePicker
