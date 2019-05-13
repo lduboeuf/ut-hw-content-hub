@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=hello-world3
+Exec=hw3
+Icon=assets/todos.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+Name[en_US]=hello-world3.desktop
