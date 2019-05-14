@@ -5,7 +5,7 @@ import QtQuick.Controls 2.2
 Item {
 
     id:utPicker
-    property var allowedExtension :[ "wav", "ogg" ]
+    property var nameFilters :[]
     property string msg: ""
 
     signal filesAdded
@@ -14,9 +14,9 @@ Item {
     //check for allowed extensions
     function isRightFileType(fileName){
         var extension = fileName.substring(fileName.length-3,fileName.length)
-        for (var j = 0; j < utPicker.allowedExtension.length; j++){
-            if (utPicker.allowedExtension[j]===extension){
-                console.log(allowedExtension[j], extension)
+        for (var j = 0; j < utPicker.nameFilters.length; j++){
+            if (utPicker.nameFilters[j]===extension){
+                //console.log(allowedExtension, extension)
                 return true
             }
         }
@@ -44,8 +44,8 @@ Item {
 
 
     Button{
-        id:btn
-        text: "kikou ch"
+        id:btnImport
+        text: "Import File"
         onClicked:  picker.show()
         ToolTip{
             id:toolTip
@@ -56,7 +56,9 @@ Item {
         }
     }
 
-    UTFilePicker{
+
+
+    UTFileImportHandler{
         id: picker
         onAccept: utPicker.storeFiles(files)
     }

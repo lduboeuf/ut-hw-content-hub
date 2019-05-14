@@ -2,7 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>UTFileHandler.qml</file>
-        <file>UTFilePicker.qml</file>
+        <file>UTFileImport.qml</file>
+        <file>UTFileImportHandler.qml</file>
+        <file>UTFileExportHandler.qml</file>
+        <file>UTFileExport.qml</file>
     </qresource>
 </RCC>

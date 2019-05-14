@@ -7,7 +7,7 @@ class UTFileMgr : public QObject
 {
     Q_OBJECT
 public:
-    explicit UTFileMgr(QObject *parent = nullptr);
+    explicit UTFileMgr(QString appDir, QObject *parent = nullptr);
 
     Q_INVOKABLE void importFile(QString url);
 

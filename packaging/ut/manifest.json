@@ -6,10 +6,11 @@
     "hooks": {
         "hw3": {
             "apparmor": "hw3.apparmor",
-            "desktop":  "hw3.desktop"
+            "desktop":  "hw3.desktop",
+            "content-hub": "hw3.content"
         }
     },
-    "version": "0.7",
+    "version": "1.1",
     "maintainer": "lionel <lionel.duboeuf@gmail.com>",
     "framework" : "ubuntu-sdk-16.04"
 }

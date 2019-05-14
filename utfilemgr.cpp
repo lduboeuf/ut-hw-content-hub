@@ -5,10 +5,11 @@
 #include <QFileInfo>
 #include <QDebug>
 
-UTFileMgr::UTFileMgr(QObject *parent) : QObject(parent)
+UTFileMgr::UTFileMgr(QString appDir, QObject *parent) : QObject(parent)
 {
 
-    m_AppDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    m_AppDataDir = appDir;
+    qDebug() << "AppDir:" + m_AppDataDir;
     // Default user location
     if (!QFile(m_AppDataDir).exists())
     {
@@ -26,15 +27,21 @@ UTFileMgr::UTFileMgr(QObject *parent) : QObject(parent)
 
 
 void UTFileMgr::importFile(QString url){
-   QString destFile = m_AppDataDir + QDir::separator() +QFileInfo(url).fileName();
+
+    QString destFile = m_AppDataDir + QDir::separator() +QFileInfo(url).fileName();
 
    if (QFile::exists(destFile))
    {
        QFile::remove(destFile);
    }
-   QFile::copy(url, m_AppDataDir + destFile);
 
-   qDebug() << "Copied file to:" + destFile;
+   if (QFile::copy(url, destFile)){
+       qDebug() << "Copied file to:" + destFile;
+   }else{
+        qWarning() << "Error while copying:" + url + " to:" + destFile;
+   }
+
+
 }
 
 void UTFileMgr::makeSureDirExistsAndIsWritable(const QString& dirFullPath)

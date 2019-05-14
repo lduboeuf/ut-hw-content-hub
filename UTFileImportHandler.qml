@@ -12,8 +12,9 @@ Popups.PopupBase {
     // the dialog not being updated.
     parent: QuickUtils.rootItem(this)
 
-    property var activeTransfer
+    property var activeTransfer: null
     property bool allowMultipleFiles
+    property var contentHandler
 
     signal accept(var files)
     signal reject()
@@ -53,6 +54,7 @@ Popups.PopupBase {
         id: stateChangeConnection
         target: picker.activeTransfer
         onStateChanged: {
+            //import
             if (picker.activeTransfer.state === ContentTransfer.Charged) {
                 var selectedItems = []
                 for(var i in picker.activeTransfer.items) {
@@ -63,8 +65,15 @@ Popups.PopupBase {
                 picker.accept(selectedItems)
                 picker.hide()
             }
+
+
+
+
+
         }
     }
+
+
 
 
 
