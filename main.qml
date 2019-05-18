@@ -110,7 +110,7 @@ ApplicationWindow {
 
             Connections{
                 target: utFilePicker.item
-                onFilesAdded: console.log("olala ok")
+                onFilesAdded: console.log("olala import ok")
             }
         }
 
@@ -130,7 +130,7 @@ ApplicationWindow {
 
             Connections{
                 target: utFileExport.item
-                onDone: console.log("cool, done")
+                onDone: console.log("cool, import done")
             }
 
         }
