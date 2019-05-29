@@ -6,3 +6,5 @@ This is designed as if it will be used in a Cross Platform application. ( onl y 
 more documentation : https://docs.ubports.com/en/latest/appdev/guides/contenthub.html
 
 Build : `clickable -c packaging/ut/clickable.json`
+
+Video short tutorial https://youtu.be/AihwC2sPIk0
